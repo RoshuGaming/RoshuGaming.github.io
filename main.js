@@ -1,6 +1,6 @@
 function fetchAndRenderSocialLinks() {
     // Fetch the social links from the JSON file
-    fetch("links.json")
+    fetch("link.json")
         .then((response) => response.json())
         .then((data) => {
             const socialLinksSection = document.getElementById("social-links");
