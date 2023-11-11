@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bacon_Space</title>
+    <title>RoshuGaming</title>
     <!-- Include Bootstrap 5.3.0 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Include Font Awesome 6.4.2 CSS -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta name="description" content="Bacon_Space's Social's">
-	<meta name="keywords" content="Twitch, Wrestling, Bacon_Space">
+    <meta name="description" content="Roshu's Social's">
+	<meta name="keywords" content="Twitch, RoshuGaming, HunterStrange">
 
 <meta name="robots" content="noindex, nofollow">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Custom CSS for styling -->
     <link rel="icon" type="image/x-icon" href="default-favicon.ico" id="favicon">
-    <meta name="og:image" content="https://avatars.githubusercontent.com/u/16171045?v=4" id="og-image">
-    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/16171045?v=4" id="twitter-image">
+    <meta name="og:image" content="https://avatars.githubusercontent.com/u/150539269?v=4" id="og-image">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/150539269?v=4" id="twitter-image">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,7 +27,7 @@
 			    text-align: -webkit-center;
         }
         header {
-            background-color: #007bff;
+            background-color: red;
             color: #fff;
             text-align: center;
             padding: 20px 0;
@@ -48,7 +48,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         footer {
-            background-color: #007bff;
+            background-color: red;
             color: #fff;
             text-align: center;
             padding: 10px 0;
@@ -60,7 +60,7 @@
 </head>
 <body>
     <header>
-        <h1>Bacon_Space</h1>
+        <h1>RoshuGaming</h1>
         <p>Welcome to my profile!</p>
     </header>
     <main>
@@ -73,6 +73,47 @@
     </footer>
     <!-- Include Bootstrap 5.3.0 JS (Popper.js and Bootstrap JS) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="main.js"></script>
+	<script src="main.js"></script>
+	<script src="twitch.js"></script>
+    <script>
+        // Function to get the current year in the specified timezone
+        function getCurrentYearInTimeZone(timezone) {
+            const options = { year: 'numeric', timeZone: timezone };
+            const formatter = new Intl.DateTimeFormat('en-US', options);
+            const currentYear = formatter.format(new Date());
+            return currentYear;
+        }
+
+     
+        // Fetch TheBaconSpace user's avatar from GitHub API
+        fetch('https://api.github.com/users/Roshugaming')
+            .then(response => response.json())
+            .then(data => {
+                // Extract the avatar URL from the API response
+                const avatarUrl = data.avatar_url;
+                const ogImage = document.getElementById('og-image');
+                ogImage.content = avatarUrl;
+                const twitterImage = document.getElementById('twitter-image');
+                twitterImage.content = avatarUrl;
+                // Update the href attribute of the favicon link
+                const favicon = document.getElementById('favicon');
+                favicon.href = avatarUrl;
+
+                // Update the current year in the specified timezone
+                const currentYearElement = document.getElementById('current-year');
+                const timezone = 'America/Chicago'; // Specify your desired timezone here
+                const currentYear = getCurrentYearInTimeZone(timezone);
+                currentYearElement.textContent = currentYear;
+
+                // Fetch and render social links initially
+                fetchAndRenderSocialLinks();
+
+                // Automatically refresh social links every 3 minutes (180,000 milliseconds)
+                setInterval(fetchAndRenderSocialLinks, 3 * 60 * 1000); // 3 minutes in milliseconds
+            })
+            .catch(error => {
+                console.error('Error fetching avatar:', error);
+            });
+    </script>
 </body>
 </html>
