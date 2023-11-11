@@ -1,0 +1,44 @@
+{
+   "socialLinks": [
+       {
+           "name": "Twitch",
+           "url": "https://tinyurl.com/RoshuGaming",
+           "icon": "fab fa-twitch"
+       },
+       {
+           "name": "Threads",
+           "url": "https://tinyurl.com/RoshuThreads",
+           "icon": "fab fa-threads"
+       },
+       {
+           "name": "Instagram",
+           "url": "https://tinyurl.com/Roshuinsta",
+           "icon": "fab fa-instagram"
+       },
+       {
+           "name": "Twitter",
+           "url": "https://tinyurl.com/RoshuX",
+           "icon": "fab fa-x-twitter"
+       },
+       {
+           "name": "Facebook",
+           "url": "https://tinyurl.com/RoshuFB",
+           "icon": "fab fa-facebook"
+       },
+       {
+           "name": "YouTube",
+           "url": "https://tinyurl.com/RoshuYT",
+           "icon": "fab fa-youtube"
+       },
+       {
+           "name": "Discord",
+           "url": "https://tinyurl.com/RoshuDiscord",
+           "icon": "fab fa-discord"
+       },
+       {
+           "name": "TikTok",
+           "url": "https://tinyurl.com/RoshuTiktok",
+           "icon": "fab fa-tiktok"
+       }
+   ]
+}
