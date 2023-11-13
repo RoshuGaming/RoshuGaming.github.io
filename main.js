@@ -14,7 +14,8 @@ function fetchAndRenderSocialLinks() {
                     const socialButton = document.createElement("a");
                     socialButton.href = link.url;
                     socialButton.target = "_blank";
-                    socialButton.className = "btn btn-primary mr-2 mb-2";
+                    // Add "btn btn-outline" class for an outlined button
+                    socialButton.className = "btn btn-outline btn-primary mr-2 mb-2";
                     socialButton.innerHTML = `${link.name} <i class="${link.icon}"></i>`;
 
                     socialLinksSection.appendChild(socialButton);
