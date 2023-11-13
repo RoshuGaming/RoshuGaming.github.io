@@ -39,6 +39,11 @@
            "name": "TikTok",
            "url": "https://tinyurl.com/RoshuTiktok",
            "icon": "fab fa-tiktok"
+       },
+       {
+           "name": "Blue Sky",
+           "url": "https://tinyurl.com/RoshuBsky",
+           "icon": "fab fa-skyatlas"
        }
    ]
 }
